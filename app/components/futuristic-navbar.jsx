@@ -21,9 +21,9 @@ export default function FuturisticNavbar() {
   const navItems = [
     // { name: 'Newsletter', href: '#newsletter' },
     { name: "Games", href: "/games" },
-    { name: "Careers", href: "#careers" },
+    { name: "Careers", href: "/careers" },
     { name: "About", href: "#about" },
-    { name: "Store", href: "#store" },
+    { name: "Store", href: "/store" },
   ];
 
   return (

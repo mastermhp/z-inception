@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import FuturisticNavbar from "../components/futuristic-navbar";
+import AnimatedFooter from "../components/animated-footer";
+import SystemRequirements from "../components/system-requirements";
 
 export default function GamesPage() {
   return (
@@ -22,20 +24,17 @@ export default function GamesPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-red-900/40 via-transparent to-black/80" />
         </div>
 
-        <div className="relative z-10 text-center">
-          <h1 className="text-6xl font-bold text-white animate-fadeInUp">
-            Games
-          </h1>
+        <div className="relative mt-68 z-10 text-center">
+          <h2 className="text-6xl font-bold text-white animate-fadeInUp">
+            Explore Our Games
+          </h2>
         </div>
       </section>
 
       {/* Explore Our Games Section */}
-      <section className="py-20 px-4 border-t border-gray-800">
+      <section className="py-28 px-4 border-t border-gray-800">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-5xl font-bold mb-16 animate-fadeInUp">
-            Explore Our Games
-          </h2>
-
+          
           {/* Featured Game Card */}
           <div className="flex justify-center">
             <div className="group relative max-w-md cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-translate-y-2">
@@ -92,165 +91,11 @@ export default function GamesPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black border-t border-gray-800 py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            {/* Company Info */}
-            <div className="space-y-4">
-              <div className="text-red-900 text-2xl font-bold">
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="currentColor"
-                >
-                  <path d="M20 0L35 10v20L20 40L5 30V10L20 0z" />
-                </svg>
-              </div>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                AttritoM7 Productions is a software company based in Bangladesh,
-                specializing in the development of original video game titles,
-                including Agontuk and Zero Hour.
-              </p>
-            </div>
+      {/* System Requirements Section */}
+      <SystemRequirements />
 
-            {/* Menu */}
-            <div>
-              <h3 className="text-red-900 font-semibold mb-4">Menu</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/games"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Games
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Newsletter
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Careers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h3 className="text-red-900 font-semibold mb-4">Contact</h3>
-              <div className="space-y-2 text-gray-300 text-sm">
-                <p>House- 57/A, Road-9A,</p>
-                <p>Dhanmondi 1209, Dhaka,</p>
-                <p>Bangladesh</p>
-                <p className="mt-4">contact@attritom7.com</p>
-              </div>
-            </div>
-
-            {/* Social */}
-            <div>
-              <h3 className="text-red-900 font-semibold mb-4">Social</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Instagram
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    LinkedIn
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Discord
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Twitter
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Facebook
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Bottom Footer */}
-          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm">
-              ©2025 Attrito M7 Productions. ALL RIGHTS RESERVED
-            </p>
-            <div className="flex space-x-4 mt-4 md:mt-0">
-              <Link
-                href="#"
-                className="text-gray-500 hover:text-white text-sm transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <span className="text-gray-500">|</span>
-              <Link
-                href="#"
-                className="text-gray-500 hover:text-white text-sm transition-colors"
-              >
-                Terms & Conditions
-              </Link>
-              <span className="text-gray-500">|</span>
-              <Link
-                href="#"
-                className="text-gray-500 hover:text-white text-sm transition-colors"
-              >
-                Cookies Policy
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {/* Animated Footer */}
+      <AnimatedFooter />
     </div>
   );
 }

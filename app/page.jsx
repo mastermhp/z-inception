@@ -1,5 +1,6 @@
 import FuturisticNavbar from "./components/futuristic-navbar";
 import AnimatedHero from "./components/animated-hero";
+import AnimatedFooter from "./components/animated-footer";
 import Image from "next/image";
 
 export default function FuturisticHomePage() {
@@ -39,7 +40,7 @@ export default function FuturisticHomePage() {
               the outbreak and uncover the truth. From the dense streets of the
               infected city to eerie research labs and abandoned coastlines,
               every mission will test your aim, instincts, and courage. This is
-              not just another zombie game — it’s your fight for humanity’s
+              not just another zombie game — it's your fight for humanity's
               final stand. Are you ready to pull the trigger?
             </p>
           </div>
@@ -80,7 +81,7 @@ export default function FuturisticHomePage() {
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 order-2 lg:order-1 animate-slide-in-left">
             <h2 className="text-cyber text-5xl font-black holographic animate-hologram">
-              Cox’s Bazar
+              Cox's Bazar
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#2d0102] to-[#700002] animate-pulse-slow"></div>
             <p className="text-gaming text-lg text-gray-300 leading-relaxed">
@@ -125,16 +126,16 @@ export default function FuturisticHomePage() {
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#2d0102] to-[#700002] animate-pulse-slow"></div>
             <p className="text-gaming text-lg text-gray-300 leading-relaxed">
-              A secret experiment gone wrong. Now it’s crawling with danger.
+              A secret experiment gone wrong. Now it's crawling with danger.
             </p>
           </div>
         </div>
       </section>
 
       {/* Intense Tactical Action */}
-      <section className="py-20 px-4 relative">
+      <section className="py-28 mb-10 px-4 relative">
         <div className="absolute inset-0 cyber-grid opacity-10"></div>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 order-2 lg:order-1 animate-slide-in-left">
             <h2 className="text-cyber text-5xl font-black holographic animate-hologram">
               INTENSE TACTICAL ACTION
@@ -173,14 +174,8 @@ export default function FuturisticHomePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-4 border-t border-[#2d0102]/20 bg-gradient-to-t from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gaming text-gray-500 animate-fade-in-scale">
-            &copy; 2025 INCEPTION STUDIO. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      {/* Animated Footer */}
+      <AnimatedFooter />
     </div>
   );
 }
