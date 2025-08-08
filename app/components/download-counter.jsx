@@ -8,6 +8,9 @@ export default function DownloadCounter() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const [keySequence, setKeySequence] = useState('')
+
+  const SECRET_CODE = 'ZINCEPTION' // Secret code to show download counter
 
   useEffect(() => {
     const fetchDownloadCount = async () => {
@@ -43,21 +46,24 @@ export default function DownloadCounter() {
     fetchDownloadCount()
   }, [])
 
-  // Secret key listener
+  // Secret code listener
   useEffect(() => {
     const handleKeyPress = (event) => {
-      // Press 'D' key to toggle download stats
-      if (event.key.toLowerCase() === 'da' && !event.ctrlKey && !event.altKey && !event.metaKey) {
-        // Only trigger if not typing in an input field
-        if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA') {
+      // Only trigger if not typing in an input field
+      if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA') {
+        const newSequence = (keySequence + event.key.toUpperCase()).slice(-SECRET_CODE.length)
+        setKeySequence(newSequence)
+        
+        if (newSequence === SECRET_CODE) {
           setIsVisible(prev => !prev)
+          setKeySequence('') // Reset sequence after successful match
         }
       }
     }
 
     window.addEventListener('keydown', handleKeyPress)
     return () => window.removeEventListener('keydown', handleKeyPress)
-  }, [])
+  }, [keySequence])
 
   // Don't render anything if not visible
   if (!isVisible) {
@@ -66,7 +72,7 @@ export default function DownloadCounter() {
 
   if (loading) {
     return (
-      <div className="flex items-center space-x-2 text-gray-400 animate-fadeIn">
+      <div className="flex items-center space-x-2 text-gray-400 animate-fadeIn pl-8">
         <Download className="w-5 h-5 animate-pulse" />
         <span className="text-lg">Loading downloads...</span>
       </div>
@@ -74,18 +80,21 @@ export default function DownloadCounter() {
   }
 
   return (
-    <div className="flex items-center space-x-3 bg-gray-800/50 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-700 animate-fadeIn">
-      <div className="flex items-center space-x-2">
-        <Download className="w-5 h-5 text-[#2d0102]" />
-        <div className="flex flex-col">
-          <span className="text-2xl font-bold text-white">
-            {downloadCount.toLocaleString()}
-          </span>
-          <span className="text-sm text-gray-400">Total Downloads</span>
+    <div className="animate-fadeIn pl-8">
+      <div className="flex items-center space-x-3 bg-gray-800/50 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-700 neon-border">
+        <div className="flex items-center space-x-2">
+          <Download className="w-5 h-5 text-[#2d0102] animate-pulse" />
+          <div className="flex flex-col">
+            <span className="text-2xl font-bold text-white animate-pulse">
+              {downloadCount.toLocaleString()}
+            </span>
+            <span className="text-sm text-gray-400">Total Downloads</span>
+          </div>
         </div>
-      </div>
-      <div className="text-xs text-gray-500 ml-2">
-        Press 'D' to hide
+        <div className="text-xs text-gray-500 ml-2 border-l border-gray-600 pl-2">
+          <div className="text-[#700002] font-mono">Type: <span className="text-white">{SECRET_CODE}</span></div>
+          <div>to hide</div>
+        </div>
       </div>
     </div>
   )

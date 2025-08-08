@@ -1,6 +1,7 @@
 import FuturisticNavbar from "./components/futuristic-navbar";
 import AnimatedHero from "./components/animated-hero";
 import AnimatedFooter from "./components/animated-footer";
+import SecretCodesHint from "./components/secret-codes-hint";
 import Image from "next/image";
 
 export default function FuturisticHomePage() {
@@ -133,9 +134,9 @@ export default function FuturisticHomePage() {
       </section>
 
       {/* Intense Tactical Action */}
-      <section className="py-28 mb-10 px-4 relative">
+      <section className="py-20 px-4 relative">
         <div className="absolute inset-0 cyber-grid opacity-10"></div>
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 order-2 lg:order-1 animate-slide-in-left">
             <h2 className="text-cyber text-5xl font-black holographic animate-hologram">
               INTENSE TACTICAL ACTION
@@ -173,6 +174,9 @@ export default function FuturisticHomePage() {
           </div>
         </div>
       </section>
+
+      {/* Secret Codes Hint */}
+      {/* <SecretCodesHint /> */}
 
       {/* Animated Footer */}
       <AnimatedFooter />
