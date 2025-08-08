@@ -86,7 +86,7 @@ export default function LiveStats() {
   const StatCard = ({ icon: Icon, value, label, loading: isLoading }) => (
     <div className="bg-gray-800/30 backdrop-blur-sm rounded-lg p-4 border border-gray-700/50">
       <div className="flex items-center space-x-3">
-        <Icon className="w-6 h-6 text-red-500" />
+        <Icon className="w-6 h-6 text-[#2d0102]" />
         <div>
           <div className="text-2xl font-bold text-white">
             {isLoading ? (

@@ -47,7 +47,7 @@ export default function DownloadCounter() {
   useEffect(() => {
     const handleKeyPress = (event) => {
       // Press 'D' key to toggle download stats
-      if (event.key.toLowerCase() === 'd' && !event.ctrlKey && !event.altKey && !event.metaKey) {
+      if (event.key.toLowerCase() === 'da' && !event.ctrlKey && !event.altKey && !event.metaKey) {
         // Only trigger if not typing in an input field
         if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA') {
           setIsVisible(prev => !prev)
@@ -76,7 +76,7 @@ export default function DownloadCounter() {
   return (
     <div className="flex items-center space-x-3 bg-gray-800/50 backdrop-blur-sm rounded-lg px-4 py-3 border border-gray-700 animate-fadeIn">
       <div className="flex items-center space-x-2">
-        <Download className="w-5 h-5 text-red-500" />
+        <Download className="w-5 h-5 text-[#2d0102]" />
         <div className="flex flex-col">
           <span className="text-2xl font-bold text-white">
             {downloadCount.toLocaleString()}
